@@ -1,0 +1,15 @@
+<div class='form-title'>Registration Form </div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+<%= form_for(@user) do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :password %>
+<%= f.password_field :password %>
+<%= f.submit "Sign up" %>
+    <% end %>
+  </div>
+</div>
+

@@ -15,22 +15,42 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
-   <nav class="navbar navbar-inverse">
+   <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Private Events</a>
+      <a class="navbar-brand" href="#"><b>Private Events</b></a>
     </div>
     <ul class="nav navbar-nav">
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-glass"></span> Events</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><%= link_to root_path, class: "btn btn-black" do %>
+        <span class="glyphicon glyphicon-home"></span> Home </a>
+        <% end %></li>
+      <li> <%= link_to new_user_path, class: "btn btn-black" do %>
+        <span class="glyphicon glyphicon-glass"></span> Events</a>
+        <% end %></li>
+        <% if current_user.nil? %>
+      <li><%= link_to new_user_path, class: "btn btn-black" do %>
+        <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+        <% end %></li>
+      <li><%= link_to login_path, class: "btn btn-black" do %>
+        <span class="glyphicon glyphicon-log-in"></span> Login</a>
+        <% end %></li>
+        <% else %>
+        <li><%= link_to logout_path, method: :delete, class: "btn btn-black" do %>
+        <span class="glyphicon glyphicon-log-in"></span> Signout</a>
+        <% end %></li>
+        <li><%= link_to root_path, class: "btn btn-black" do %>
+        <span class="glyphicon glyphicon-user"></span> <%= @current_user.name %></a>
+        <% end %></li>
+        <% end %>
     </ul>
   </div>
 </nav> 
 
-<div class="footer">© 2017 Jacob Moore.</div>
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
 
       <%= yield %>    
   </body>

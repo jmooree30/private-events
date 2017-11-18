@@ -12,7 +12,7 @@
       <%= image_tag "/assets/2.jpg" %>
       <div class="carousel-caption">
         <h3>Boston</h3>
-        <p>LA is always so much fun!</p>
+        <p>Boston is always so much fun!</p>
       </div>
     </div>
 
@@ -45,7 +45,15 @@
 </div>
 
 <div class="panel panel-default">
-  <div class="panel-heading">Upcoming events!</div>
-  <div class="panel-body"></div>
+  <div class="panel-heading">Private Events</div>
+  <div class="panel-body">Host events<br><br> Attend events<br><br> Network<br><br>
+    <div class="btn btn-success">
+      <% if !logged_in? %>
+        <%= link_to 'Get started!', new_user_path %><br>
+      </div>
+      <% end %>
+      <div class="btn btn-success">
+        <%= link_to 'View events', new_user_path %> 
+</div>
 </div>
 

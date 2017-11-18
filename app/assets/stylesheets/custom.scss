@@ -7,7 +7,7 @@
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: black;
+  background-color: #D3D3D3;
   text-align: left;
   font-colot: white;
   position: fixed; bottom: 0
@@ -23,22 +23,58 @@
 }
 
 body{
-    background-color:gray;
+background-color: #f0eff2;
+background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
 }
 
 
 .panel {
     text-align:center;
-    height:100px;
+    height:relative;
     width:600px;
     position: absolute;
-    top: 83%;
+    top: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
 
 .panel-heading {
     font-weight:bold;
-    font-size:24px;
+    font-size:30px;
+    background-color: #D3D3D3;
 }
 
+.panel-body {
+    font-weight:bold;
+    font-size:24;
+}
+
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+         
+  input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+} 
+
+.home {
+  text-align: center;
+  font-size:24px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.form-title {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+}
