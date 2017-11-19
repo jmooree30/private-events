@@ -26,7 +26,7 @@
       <li><%= link_to root_path, class: "btn btn-black" do %>
         <span class="glyphicon glyphicon-home"></span> Home </a>
         <% end %></li>
-      <li> <%= link_to new_user_path, class: "btn btn-black" do %>
+      <li> <%= link_to events_path, class: "btn btn-black" do %>
         <span class="glyphicon glyphicon-glass"></span> Events</a>
         <% end %></li>
         <% if current_user.nil? %>
@@ -37,11 +37,14 @@
         <span class="glyphicon glyphicon-log-in"></span> Login</a>
         <% end %></li>
         <% else %>
-        <li><%= link_to logout_path, method: :delete, class: "btn btn-black" do %>
-        <span class="glyphicon glyphicon-log-in"></span> Signout</a>
+          <li><%= link_to new_event_path, class: "btn btn-black" do %>
+          <span class="glyphicon glyphicon-pencil"></span> Create event</a>
+        <% end %></li>
+          <li><%= link_to logout_path, method: :delete, class: "btn btn-black" do %>
+          <span class="glyphicon glyphicon-log-in"></span> Signout</a>
         <% end %></li>
         <li><%= link_to current_user, class: "btn btn-black" do %>
-        <span class="glyphicon glyphicon-user"></span> <%= @current_user.name %></a>
+          <span class="glyphicon glyphicon-user"></span> <%= @current_user.name %></a>
         <% end %></li>
         <% end %>
     </ul>

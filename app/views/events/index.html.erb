@@ -1,0 +1,8 @@
+<div class= "title"> All events</div>
+
+<div class="panel panel-default">
+<% @event.each do |f| %>
+  <div class="panel-heading"> <%= f.title %> </div>
+  <div class="panel-body"> <%= f.description %></div>
+  <% end %>
+</div>
