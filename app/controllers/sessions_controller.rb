@@ -4,10 +4,14 @@ class SessionsController < ApplicationController
     end 
 
     def create
-      user = User.find_by(name: params[:session][:name])
-      log_in user
-      flash[:info] = "Sign in successful"
-      redirect_to root_path
+    if user = User.find_by(name: params[:session][:name])
+       log_in user
+        flash[:info] = "Sign in successful"
+        redirect_to root_path
+      else 
+        flash[:info] = "Something went wrong"
+        redirect_to root_path
+      end 
     end
 
     def destroy 

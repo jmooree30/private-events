@@ -1,0 +1,9 @@
+<div class= "title">
+<%= @user.name %>'s events
+</div>
+<div class="panel panel-default">
+<% @events.each do |f| %>
+  <div class="panel-heading"> <%= f.title %> </div>
+  <div class="panel-body"> <%= f.description %><br> </div>
+  <% end %>
+</div>
