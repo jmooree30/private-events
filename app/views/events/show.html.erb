@@ -1,0 +1,4 @@
+<%= @event.description %>
+ <% @attendees.each do |user| %>
+    <ul class="text-center"><%= user.name %></ul>
+<% end %>

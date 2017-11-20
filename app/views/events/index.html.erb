@@ -2,6 +2,12 @@
 
 <div class="panel panel-default">
 <% @event.each do |f| %>
+<%= link_to event_path(f.id), class: "btn btn-black" do %> View event </a>
+<% end %>
+<%= link_to "Attend", method: :post,
+                      controller: "attendance", 
+                      action: :create,
+                      event_id: f.id %> 
   <div class="panel-heading"> <%= f.title %> </div>
   <div class="panel-body"> <%= f.description %></div>
   <% end %>
