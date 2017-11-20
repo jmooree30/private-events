@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'attendance/create'
-  resources :attendance
+  get 'attendances/create'
+  resources :attendances
   resources :events
   resources :static_pages
   resources :users
