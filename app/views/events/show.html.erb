@@ -1,4 +1,9 @@
-<%= @event.description %>
- <% @attendees.each do |user| %>
-    <ul class="text-center"><%= user.name %></ul>
-<% end %>
+<div class="title">
+    Members attending
+</div>
+ 
+<div class="panel panel-default">
+    <% @attendees.each do |user| %>
+  <div class="panel-heading"> <%= user.name %> </div>
+  <% end %>
+</div>

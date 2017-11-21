@@ -1,14 +1,15 @@
-<div class= "title"> All events</div>
+<div class= "title"> All events</div><br>
 
 <div class="panel panel-default">
-<% @event.each do |f| %>
-<%= link_to event_path(f.id), class: "btn btn-black" do %> View event </a>
-<% end %>
-<%= link_to "Attend", method: :post,
+<% @event.each do |f| %> 
+  <div class="panel-heading"> <%= f.title %> </div>
+  <div class="panel-body"> <%= f.location %></div>
+  <div class="panel-body"> <%= f.date %></div>
+  <div class="panel-body"> <%= f.description %></div>
+  <div class="panel-body"> <%= link_to "View event", event_path(f.id) %></div>
+  <div class="panel-body"><%= link_to "Attend", method: :post,
                       controller: "attendances", 
                       action: :create,
-                      event_id: f.id %> 
-  <div class="panel-heading"> <%= f.title %> </div>
-  <div class="panel-body"> <%= f.description %></div>
+                      event_id: f.id %></div>
   <% end %>
 </div>
