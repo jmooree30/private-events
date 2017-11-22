@@ -6,8 +6,8 @@
   <div class="panel-body">Location: <%= f.location %></div>
   <div class="panel-body">Date: <%= f.date %></div>
   <div class="panel-body"> <%= f.description %></div>
+  <% if logged_in? %>
   <div class="panel-body"> <%= link_to "View event", event_path(f.id) %></div>
-   <% if logged_in? %>
   <div class="panel-body"><%= link_to "Attend", method: :post,
                       controller: "attendances", 
                       action: :create,
@@ -24,8 +24,8 @@
   <div class="panel-body">Location: <%= f.location %></div>
   <div class="panel-body">Date: <%= f.date %></div>
   <div class="panel-body"> <%= f.description %></div>
-  <div class="panel-body"> <%= link_to "View event", event_path(f.id) %></div>
   <% if logged_in? %>
+  <div class="panel-body"> <%= link_to "View event", event_path(f.id) %></div>
   <div class="panel-body"><%= link_to "Attend", method: :post,
                       controller: "attendances", 
                       action: :create,
