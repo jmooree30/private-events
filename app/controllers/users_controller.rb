@@ -6,7 +6,8 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
-        @events = @user.attended_events
+        @past = @user.past_events
+        @future = @user.future_events
     end 
 
     def new
@@ -23,11 +24,6 @@ class UsersController < ApplicationController
           redirect_to new_user_path
         end 
     end
-
-    def show
-        @user = User.find(params[:id])
-        @events = @user.events
-    end 
 
     private
 

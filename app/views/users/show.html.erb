@@ -1,13 +1,28 @@
 <div class= "title">
-<%= @user.name %>'s events
+<%= @user.name %>'s events<br><br>
 </div>
-<div class="panel panel-default">
-<% @events.each do |f| %>
+
+
+<div class= "title"> Upcoming events: </div>
+<div class="panel panel-primary">
+    <% @future.each do |f| %>
   <div class="panel-heading"> <%= f.title %> </div>
-  <div class="panel-body"> <%= f.location %> </div>
-  <div class="panel-body"> <%= f.date %> </div>
+  <div class="panel-body">Location: <%= f.location %> </div>
+  <div class="panel-body">Date: <%= f.date %> </div>
   <div class="panel-body"> <%= f.description %> </div>
- 
+  <% end %>
+</div>
+
+
+
+
+<div class= "title"> Past events: </div>
+<div class="panel panel-warning">
+    <% @past.each do |f| %>
+  <div class="panel-heading"> <%= f.title %> </div>
+  <div class="panel-body">Location: <%= f.location %> </div>
+  <div class="panel-body">Date: <%= f.date %> </div>
+  <div class="panel-body"> <%= f.description %> </div>
   <% end %>
 </div>
 
