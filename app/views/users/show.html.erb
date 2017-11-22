@@ -3,7 +3,8 @@
 </div>
 
 
-<div class= "title"> Upcoming events: </div>
+<div class= "title"> Upcoming events </div>
+
 <div class="panel panel-primary">
     <% @future.each do |f| %>
   <div class="panel-heading"> <%= f.title %> </div>
@@ -15,14 +16,16 @@
 
 
 
+<br>
+<div class= "title"> Past events </div>
+<br>
 
-<div class= "title"> Past events: </div>
 <div class="panel panel-warning">
     <% @past.each do |f| %>
   <div class="panel-heading"> <%= f.title %> </div>
   <div class="panel-body">Location: <%= f.location %> </div>
   <div class="panel-body">Date: <%= f.date %> </div>
   <div class="panel-body"> <%= f.description %> </div>
-  <% end %>
 </div>
+  <% end %>
 

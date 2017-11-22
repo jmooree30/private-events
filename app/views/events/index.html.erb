@@ -1,7 +1,23 @@
-<div class= "title"> All events</div><br>
+<div class= "title"> Upcoming events</div><br>
 
 <div class="panel panel-primary">
-<% @event.each do |f| %> 
+<% @future.each do |f| %> 
+  <div class="panel-heading"> <%= f.title %> </div>
+  <div class="panel-body">Location: <%= f.location %></div>
+  <div class="panel-body">Date: <%= f.date %></div>
+  <div class="panel-body"> <%= f.description %></div>
+  <div class="panel-body"> <%= link_to "View event", event_path(f.id) %></div>
+  <div class="panel-body"><%= link_to "Attend", method: :post,
+                      controller: "attendances", 
+                      action: :create,
+                      event_id: f.id %></div>
+  <% end %>
+</div>
+<br>
+
+<div class="title"> Past events </div>
+<div class="panel panel-warning">
+<% @past.each do |f| %> 
   <div class="panel-heading"> <%= f.title %> </div>
   <div class="panel-body">Location: <%= f.location %></div>
   <div class="panel-body">Date: <%= f.date %></div>
