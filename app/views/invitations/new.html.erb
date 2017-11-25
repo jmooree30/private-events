@@ -1,0 +1,11 @@
+<div class="title"> Invite <%= @user.name %> </div>
+<div class="invitations"> Which event would you like to invite <%= @user.name %> to? </div>
+
+<div class="panel panel-primary">
+  <% @events.events.each do |f|  %>
+  <div class="panel-body">  <%= link_to f.title, method: :post, 
+                                                 controller: "invitations",
+                                                 action: :create,
+                                                 user_id: f.id %> </div>
+  <% end %>
+</div>

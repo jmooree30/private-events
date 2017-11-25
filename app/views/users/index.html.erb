@@ -1,0 +1,12 @@
+
+
+<div class= "title"> Private Events users </div>
+
+<div class="panel panel-primary">
+    <% @user.each do |f| %>
+  <div class="panel-body"> <%= f.name %>
+                           <% if logged_in? %>
+                           <%= link_to "Invite", new_invitation_path(id:f.id) %>
+                           <% end %> </div>
+  <% end %>
+</div>

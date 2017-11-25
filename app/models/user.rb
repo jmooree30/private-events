@@ -2,6 +2,7 @@ class User < ApplicationRecord
     has_many :events, :foreign_key => "creator_id"
     has_many :attendances
     has_many :attended_events, through: :attendances, :source => "event"
+    has_many :invitations 
 
     def past_events
         array = []
@@ -18,6 +19,7 @@ class User < ApplicationRecord
     end
     end 
 
+#does not work
     def future_events
         array = []
         allevents = self.attended_events 
