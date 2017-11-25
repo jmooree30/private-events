@@ -6,6 +6,7 @@ class InvitationsController < ApplicationController
     def new 
         @user = User.find(params[:id])
         @events = current_user
+        @invitation = current_user.invitations.new
     end
 
     def create
@@ -20,12 +21,15 @@ class InvitationsController < ApplicationController
     end 
 
     def show
+        @user = current_user
+        @invitations = Invitation.all
+        
     end 
 
     private
 
     def invitation_params
-      params.permit(:user_id)
+      params.permit(:user_id, :event, :invited)
     end
 
 end

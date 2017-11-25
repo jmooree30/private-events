@@ -3,9 +3,9 @@
 
 <div class="panel panel-primary">
   <% @events.events.each do |f|  %>
-  <div class="panel-body">  <%= link_to f.title, method: :post, 
-                                                 controller: "invitations",
-                                                 action: :create,
-                                                 user_id: f.id %> </div>
+  <div class="panel-body">
+  <%=  link_to f.title, invitations_path(user_id: f.creator_id, event: f.id, invited: @user.id), remote: true, method: :post %> </div>
   <% end %>
 </div>
+
+

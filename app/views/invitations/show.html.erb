@@ -1,0 +1,5 @@
+<% @invitations.each do |f| %>
+<% if f.invited == @user.id %>
+<%= f.event %>
+<% end %>
+<% end %>

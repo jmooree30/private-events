@@ -13,3 +13,8 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+$('.nav-tabs').on('shown.bs.tab', 'a', function (e) {
+    if (e.relatedTarget) {
+        $(e.relatedTarget).removeClass('active');
+    }
+})

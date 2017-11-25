@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'attendances/create'
+  post 'attendances/create'
   get 'invitations/create'
   resources :attendances
   resources :events
