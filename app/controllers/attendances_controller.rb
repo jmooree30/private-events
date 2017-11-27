@@ -4,10 +4,10 @@ class AttendancesController < ApplicationController
       @attendance.user_id = current_user.id
       if @attendance.save
         flash[:success] = "Joined Event"
-        redirect_to events_url
+        redirect_to root_path
       else
         flash[:danger] = "Unable to Join Event"
-        render 'events/show'
+        redirect_to root_path
       end
     end
 

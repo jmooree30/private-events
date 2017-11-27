@@ -1,5 +1,20 @@
-<% @invitations.each do |f| %>
-<% if f.invited == @user.id %>
-<%= f.event %>
-<% end %>
-<% end %>
+<div class='title'> Pending Invitations </div>
+
+
+
+
+
+<div class="panel panel-default">
+	<% @invitations.each do |f| %>
+	<div class="panel-body"> 
+		<% if f.invited == @user.id.to_s %>
+		<%= @inviter.find_by(id: f.user_id).name %> has invited you to their event:<br>
+		<%= @events.find_by(id:f.event).title %>
+		<%= link_to "Attend", method: :post,
+		controller: "attendances", 
+		action: :create,
+		event_id: f.event %>
+		<% end %>
+	</div>
+	<% end %>
+</div>

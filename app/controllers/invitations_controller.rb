@@ -23,7 +23,8 @@ class InvitationsController < ApplicationController
     def show
         @user = current_user
         @invitations = Invitation.all
-        
+        @events = Event.all
+        @inviter = User.all 
     end 
 
     private
