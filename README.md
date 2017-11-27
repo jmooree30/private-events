@@ -1,25 +1,7 @@
-# README
+# Private-Events
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This was a project that was part the <a href='www.theodinproject.com'>odin project</a> curriculum.
 
-Things you may want to cover:
+<a href="https://sleepy-wildwood-90425.herokuapp.com/">View site</a>
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# private-events
+![Image Hover Text](/screenshot.png)
